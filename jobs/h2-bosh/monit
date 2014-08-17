@@ -1,0 +1,5 @@
+check process h2_bosh
+  with pidfile /var/vcap/sys/run/h2_bosh/h2_bosh.pid
+  start program "/var/vcap/jobs/h2_bosh/bin/monit_debugger h2_bosh_ctl '/var/vcap/jobs/h2_bosh/bin/h2_bosh_ctl start'"
+  stop program "/var/vcap/jobs/h2_bosh/bin/monit_debugger h2_bosh_ctl '/var/vcap/jobs/h2_bosh/bin/h2_bosh_ctl stop'"
+  group vcap

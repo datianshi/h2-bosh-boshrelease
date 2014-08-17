@@ -1,0 +1,13 @@
+---
+name: h2-bosh
+packages: []
+templates:
+  bin/monit_debugger: bin/monit_debugger
+  bin/h2_bosh_ctl: bin/h2_bosh_ctl
+  config/h2_bosh.conf.erb: config/h2_bosh.conf
+  data/properties.sh.erb: data/properties.sh
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh
+properties:
+  h2_bosh.leader_address:
+    description: Hostname/IP to the leader/master of the cluster
