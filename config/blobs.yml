@@ -1,1 +1,11 @@
---- {}
+---
+h2/h2-1.4.181.jar:
+  object_id: 6c849661-4628-4374-89ce-5a7125437dcf
+  sha: !binary |-
+    YTdiNTEzYzAxOTI4Mzc5MWM1ZTU4MmM0MDM1MDc0NzY3MzE1NTU1MQ==
+  size: 1683607
+java7/openjdk-1.7.0_40.tar.gz:
+  object_id: 7aec2eba-d9ac-4ede-af15-d4ffd4ef57c8
+  sha: !binary |-
+    MjI3ZTEyNTgwNTdlOTNjMGVjYTgwNjRlMDY2NzcyMDg1NGUzY2JkNA==
+  size: 31074865

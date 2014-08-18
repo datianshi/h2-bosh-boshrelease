@@ -1,0 +1,5 @@
+check process h2-instance
+  with pidfile /var/vcap/sys/run/h2-instance/h2-instance.pid
+  start program "/var/vcap/jobs/h2-instance/bin/monit_debugger h2-instance_ctl '/var/vcap/jobs/h2-instance/bin/h2-instance_ctl start'"
+  stop program "/var/vcap/jobs/h2-instance/bin/monit_debugger h2-instance_ctl '/var/vcap/jobs/h2-instance/bin/h2-instance_ctl stop'"
+  group vcap

@@ -1,0 +1,70 @@
+---
+name: h2-cluster
+director_uuid: 49710e54-18d9-48a1-ad27-188ca9048815
+
+update:
+  canaries: 1
+  canary_watch_time: 30000-240000
+  update_watch_time: 30000-600000
+  max_in_flight: 3
+
+compilation:
+  cloud_properties:
+    name: random
+  network: cf3
+  reuse_compilation_vms: true
+  workers: 1
+
+resource_pools:
+- cloud_properties:
+    name: random
+  name: small_z1
+  network: cf3
+  size: 2 
+  stemcell:
+    name: bosh-warden-boshlite-ubuntu-lucid-go_agent
+    version: latest
+
+releases:
+- name: h2-bosh
+  version: latest
+
+networks:
+- name: cf3
+  subnets:
+  - cloud_properties:
+      name: random
+    range: 10.244.2.0/30
+    reserved:
+    - 10.244.2.1
+    static:
+    - 10.244.2.2
+  - cloud_properties:
+      name: random
+    range: 10.244.2.4/30
+    reserved:
+    - 10.244.2.5
+    static:
+    - 10.244.2.6
+  - cloud_properties:
+      name: random
+    range: 10.244.2.8/30
+    reserved: []
+    static: []
+
+jobs:
+- name: h2
+  templates:
+  - name: h2-instance
+    release: h2-bosh
+  instances: 2 
+  resource_pool: small_z1
+  networks:
+  - name: cf3
+    static_ips : 
+    - 10.244.2.2
+    - 10.244.2.6
+  properties:
+    h2:
+      port: 9001
+

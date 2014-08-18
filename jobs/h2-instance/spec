@@ -1,13 +1,16 @@
 ---
-name: h2-bosh
-packages: []
+name: h2-instance
+packages:
+- h2
+- java7
 templates:
+  bin/h2-instance_ctl: bin/h2-instance_ctl
   bin/monit_debugger: bin/monit_debugger
-  bin/h2_bosh_ctl: bin/h2_bosh_ctl
-  config/h2_bosh.conf.erb: config/h2_bosh.conf
   data/properties.sh.erb: data/properties.sh
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
 properties:
-  h2_bosh.leader_address:
-    description: Hostname/IP to the leader/master of the cluster
+  h2.port:
+    description: The h2 database port listens on
+    default: 9000
+    
