@@ -1,0 +1,30 @@
+---
+packages:
+- name: h2
+  version: !binary |-
+    N2VkYjRiZDgxM2JjZTk2ZjI5NjQ3MmQwYzcwZWE3ZDY2OWYwM2RhMQ==
+  sha1: !binary |-
+    NTkwYzg4M2U1ODQzNDJiZWY3MWIyODg1OWQyY2UyYmVlODZiOGEwNw==
+  fingerprint: !binary |-
+    N2VkYjRiZDgxM2JjZTk2ZjI5NjQ3MmQwYzcwZWE3ZDY2OWYwM2RhMQ==
+  dependencies: []
+- name: java7
+  version: !binary |-
+    NWEwMDI1NjdmM2MzYTA3ZDYzZDVmMzI5NGYwYzg0ZTAyNjkzMWQ1Zg==
+  sha1: !binary |-
+    OTQyZTEwNTFlZDI4MjM0N2ExMjYyMzNkODczMWM1NmNmYTYyYTZiMQ==
+  fingerprint: !binary |-
+    NWEwMDI1NjdmM2MzYTA3ZDYzZDVmMzI5NGYwYzg0ZTAyNjkzMWQ1Zg==
+  dependencies: []
+jobs:
+- name: h2-instance
+  version: !binary |-
+    NmQzOTQ4YWVkZDAzMzRmYTc4ZTkwN2Q1NjAyY2FmZjJkM2IzMjBjOA==
+  fingerprint: !binary |-
+    NmQzOTQ4YWVkZDAzMzRmYTc4ZTkwN2Q1NjAyY2FmZjJkM2IzMjBjOA==
+  sha1: !binary |-
+    ZjIwM2VlNWYzMDUzMDE0ODdmMDE5MmMyYTY0NGMxZDBlZTc3YTgxZA==
+commit_hash: d90f0d97
+uncommitted_changes: true
+name: h2
+version: '1'
