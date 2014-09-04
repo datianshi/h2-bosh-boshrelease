@@ -9,24 +9,16 @@ update:
   serial: false
 
 jobs:
-  - name: h2_bosh_leader_z1
-    template: h2-bosh
-    instances: 0
-    resource_pool: small_z1
-    networks: (( merge ))
-    persistent_disk: 0
-    properties: {}
-  - name: h2_bosh_z1
-    template: h2-bosh
-    instances: 0
-    resource_pool: small_z1
-    networks: (( merge ))
-    persistent_disk: 0
-    update:
-      canaries: 10
-    properties:
-      h2_bosh:
-        leader_address: (( merge ))
+- name: h2
+  templates:
+  - name: h2-instance
+    release: h2
+  instances: 0
+  resource_pool: small_z1
+  networks: ((merge))
+  properties:
+    h2:
+      port: 9001
 
 networks: (( merge ))
 

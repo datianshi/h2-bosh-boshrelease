@@ -12,19 +12,11 @@ update:
   update_watch_time: 1000-30000
 
 jobs:
-  - name: h2_bosh_leader_z1
+  - name: h2
     instances: 1
     networks:
       - name: h2_bosh1
         static_ips: (( static_ips(0) ))
-  - name: h2_bosh_z1
-    instances: 2
-    networks:
-      - name: h2_bosh1
-        static_ips: ~
-    properties:
-      h2_bosh:
-        leader_address: (( jobs.h2_bosh_leader_z1.networks.h2_bosh1.static_ips.[0] ))
 
 compilation:
   cloud_properties:

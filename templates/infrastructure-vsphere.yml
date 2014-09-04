@@ -1,0 +1,32 @@
+meta:
+  environment: h2-bosh-vsphere
+
+  stemcell:
+    name: bosh-vsphere-esxi-ubuntu-trusty-go_agent
+    version: latest
+
+  subnets: ~
+  cloud_properties: ~
+
+update:
+  canaries: 1
+  max_in_flight: 50
+  canary_watch_time: 1000-30000
+  update_watch_time: 1000-30000
+
+jobs:
+  - name: h2
+    instances: 1
+    networks:
+      - name: h2_bosh1
+        static_ips: (( static_ips(0) ))
+
+compilation:
+  cloud_properties: ((meta.cloud_properties))
+resource_pools:
+  - name: small_z1
+    cloud_properties: ((meta.cloud_properties))
+
+networks:
+- name: h2_bosh1
+  subnets: ((meta.subnets))

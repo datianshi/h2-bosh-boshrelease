@@ -10,5 +10,5 @@ meta:
 director_uuid: PLACEHOLDER-DIRECTOR-UUID
 
 releases:
-  - name: h2-bosh
+  - name: h2
     version: latest

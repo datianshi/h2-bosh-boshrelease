@@ -8,8 +8,9 @@ STEMCELL_OS=${STEMCELL_OS:-ubuntu}
 infrastructure=$1
 
 if [ "$infrastructure" != "aws-ec2" ] && \
-    [ "$infrastructure" != "warden" ] ; then
-  echo "usage: ./make_manifest <aws-ec2|warden>"
+    [ "$infrastructure" != "warden" ] && \
+    [ "$infrastructure" != "vsphere" ] ; then
+  echo "usage: ./make_manifest <aws-ec2|warden|vsphere>"
   exit 1
 fi
 

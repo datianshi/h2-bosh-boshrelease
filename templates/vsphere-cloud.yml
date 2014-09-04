@@ -1,0 +1,22 @@
+meta:
+  subnets:
+  - range: 172.16.9.0/24
+    gateway: 172.16.9.1
+    reserved:
+    - 172.16.9.2 - 172.16.9.3
+    static:
+    - 172.16.9.4
+    - 172.16.9.5
+    - 172.16.9.6
+    cloud_properties:
+      name: vxw-dvs-101-virtualwire-8-sid-5002-Internal_virtual_wire_bosh
+    dns:
+    - 172.16.9.3
+    - 10.73.66.20
+    - 10.64.46.21
+    - 10.64.46.22
+
+  cloud_properties:
+    ram: 1024
+    disk: 8192
+    cpu: 1
